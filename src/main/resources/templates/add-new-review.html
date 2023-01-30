@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="h-100">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring MVC</title>
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link th:href="@{styles/main.css}" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column h-100">
+
+<div th:replace="~{fragments/header :: header}"> </div>
+
+
+<main role="main" class="flex-shrink-0">
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Add new Review</h1>
+    </div>
+  </div>
+  <div>
+    <form th:action="@{/add-new-review}" th:object="${review}" method="post">
+      <label for="customerId">CustomerID</label>
+      <input type="text" th:field="*{customerId}" id="customerId" placeholder="customerId">
+      <label for="productId">ProductID</label>
+      <input type="text" th:field="*{productId}" id="productId" placeholder="productId">
+      <label for="text">Text</label>
+      <input type="text" th:field="*{text}" id="text" placeholder="text">
+      <label for="stars">Stars</label>
+      <input type="stars" th:field="*{stars}" id="stars" placeholder="stars">
+      <input type="submit" value="Add Review">
+    </form>
+  </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous">
+</script>
+<script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" th:fragment="header">
+
+    <a class="navbar-brand" th:href="@{/}">Home</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+            aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" th:class="${activePage == 'get-product-by-asin'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-product-by-asin}">getProductByAsin<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'get-products-like'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-products-like}">getProductsLike<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'get-top-products'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-top-products}">getTopProducts<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'get-similar-cheaper-products'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-similar-cheaper-products}">getSimilarCheaperProducts<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'add-new-review'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/add-new-review}">addNewReview<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'get-trolls'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-trolls}">getTrolls<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" th:class="${activePage == 'get-offers'} ? 'nav-item active' : 'nav-item'">
+                <a class="nav-link" th:href="@{/get-offers}">getOffers<span class="sr-only">(current)</span></a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+</body>
+</html>
